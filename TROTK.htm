@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fellowship of the Ring | Book Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #ecf0f1;
+            --accent-color: #e67e22;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            font-family: 'Merriweather', serif;
+        }
+
+        .book-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .home-btn {
+            position: absolute;
+            left: 1.5rem;
+            top: 1.5rem;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .home-btn:hover {
+            color: var(--accent-color);
+            transform: translateX(-3px);
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-cover {
+            border-radius: 1rem 0 0 1rem;
+            object-fit: cover;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.05);
+        }
+
+        .detail-card {
+            background: var(--secondary-color);
+            border: none;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-card .card-header {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .purchase-links .btn {
+            background: var(--accent-color);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .purchase-links .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
+        }
+
+        .feedback-section {
+            background: rgba(255,255,255,0.9);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.2rem rgba(230,126,34,0.25);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            margin-top: 4rem;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .book-cover {
+                border-radius: 1rem 1rem 0 0;
+                height: 400px;
+            }
+            
+            .book-card {
+                margin: 1rem;
+            }
+            
+            .home-btn {
+                font-size: 1rem;
+                left: 1rem;
+                top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="book-header text-center">
+        <a href="index.htm" class="home-btn text-decoration-none">
+            <i class="bi bi-house-door"></i> Home
+        </a>
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">The Return of the King</h1>
+            <p class="lead">Book III of The Lord of the Rings</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="book-card">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="Public/Images/The-Return-of-the-King.jpeg" class="book-cover img-fluid" alt="Book Cover">
+                </div>
+                <div class="col-md-7 p-4">
+                    <div class="detail-card">
+                        <div class="card-header">About the Book</div>
+                        <div class="card-body">
+                            <p class="card-text"><em>The Return of the King</em> is the third and final volume of the epic novel 
+                                <em>The Lord of the Rings</em> by <strong>J. R. R. Tolkien</strong>. following 
+                                <em>The Two Towers</em> and <em>The Return of the King</em>. Is was published in 1955. The story begins in the kingdom of Gondor, which is soon to be attacked by the Dark Lord Sauron.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="card-header">Details</div>
+                        <div class="card-body">
+                            <dl class="row">
+                                <dt class="col-sm-4">Author</dt>
+                                <dd class="col-sm-8">J.R.R. Tolkien</dd>
+
+                                <dt class="col-sm-4">Published</dt>
+                                <dd class="col-sm-8">October 20, 1955</dd>
+
+                                <dt class="col-sm-4">Genre</dt>
+                                <dd class="col-sm-8">Epic Fantasy</dd>
+
+                                <dt class="col-sm-4">Pages</dt>
+                                <dd class="col-sm-8">423</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="purchase-links text-center">
+                        <h5 class="mb-3">Available At:</h5>
+                        <div class="d-grid gap-2 d-md-block">
+                            <a href="https://www.amazon.in/Lord-Rings-Return-King/dp/0007488343" class="btn btn-lg me-md-2 mb-2" target="_blank">
+                                <i class="bi bi-amazon"></i> Amazon
+                            </a>
+                            <a href="https://www.flipkart.com/the-return-of-the-king/p/itmfcfffswycnbv5?pid=9780008567149&lid=LSTBOK97800085671494STBZL&marketplace=FLIPKART&cmpid=content_book_8965229628_gmc" class="btn btn-lg mb-2" target="_blank">
+                                <i class="bi bi-cart"></i> Flipkart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feedback-section mt-5 p-4">
+            <h3 class="text-center mb-4">Share Your Thoughts</h3>
+            <form>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Rating</label>
+                        <select class="form-select" required>
+                            <option value="">Select Rating</option>
+                            <option>5 - Excellent</option>
+                            <option>4 - Very Good</option>
+                            <option>3 - Good</option>
+                            <option>2 - Fair</option>
+                            <option>1 - Poor</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Review</label>
+                        <textarea class="form-control" rows="4" placeholder="Write your review..." required></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg px-5">
+                            <i class="bi bi-send"></i> Submit Review
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">
+                <i class="bi bi-c-circle"></i> 2024 Book Showcase. All rights reserved.
+                <br>
+                <small>Created with <i class="bi bi-heart-fill text-danger"></i> by Book Lovers</small>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
