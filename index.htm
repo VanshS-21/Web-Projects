@@ -234,6 +234,13 @@
                             card.classList.toggle('flipped');
                         }
                     });
+
+                    // Add double click event to revert the card
+                    card.addEventListener('dblclick', (e) => {
+                        if (!e.target.closest('a')) {
+                            card.classList.remove('flipped');
+                        }
+                    });
                 });
             }
         });
