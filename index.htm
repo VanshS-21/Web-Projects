@@ -51,6 +51,7 @@
             margin: 10px auto;
             border: none;
             background: transparent;
+            cursor: pointer;
         }
         .inner {
             position: relative;
@@ -60,7 +61,8 @@
             transform-style: preserve-3d;
             background: transparent;
         }
-        .card:hover .inner {
+        .card:hover .inner,
+        .card.flipped .inner {
             transform: rotateY(180deg);
         }
         .front, .back {
@@ -101,7 +103,6 @@
             font-size: clamp(1rem, 3vw, 1.2rem);
             font-style: italic;
             color: #ffd700;
-            cursor: pointer;
         }
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -165,12 +166,6 @@
                 font-size: 0.8rem !important;
             }
         }
-
-        @media (hover: none) {
-            .card .inner {
-                transform: rotateY(180deg);
-            }
-        }
     </style>
 </head>
 <body>
@@ -195,7 +190,7 @@
             <div class="card">
                 <div class="inner">
                     <div class="front">
-                        <img src="Public/Images/The-Two-Towers.jpeg" alt="Fellowship of the Ring">
+                        <img src="Public/Images/The-Two-Towers.jpeg" alt="The Two Towers">
                     </div>
                     <div class="back">
                         <div class="title">THE TWO TOWERS</div>
@@ -206,7 +201,7 @@
             <div class="card">
                 <div class="inner">
                     <div class="front">
-                        <img src="Public/Images/The-Return-of-the-King.jpeg" alt="Fellowship of the Ring">
+                        <img src="Public/Images/The-Return-of-the-King.jpeg" alt="Return of the King">
                     </div>
                     <div class="back">
                         <div class="title">THE RETURN OF THE KING</div>
@@ -219,5 +214,29 @@
     <footer>
         <div class="bi bi-c-circle fs-5"> Book ShowCase | All rights reserved</div>
     </footer>
+
+    <script>
+        // Mobile touch handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            
+            const isTouchDevice = () => {
+                return ('ontouchstart' in window) ||
+                    (navigator.maxTouchPoints > 0) ||
+                    (navigator.msMaxTouchPoints > 0);
+            };
+
+            if (isTouchDevice()) {
+                cards.forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        // Prevent link action when clicking the card
+                        if (!e.target.closest('a')) {
+                            card.classList.toggle('flipped');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
